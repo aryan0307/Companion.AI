@@ -1,0 +1,207 @@
+/*Dark-Themed Gradient*/
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: #0e1c26;
+    color: white;
+    text-align: center;
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+/* Chat Container */
+.chat-container {
+    width: 80%;
+    background: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-color: white;
+    /*box-shadow: 0px 4px 15px white;
+    background: transparent;
+    border: 2px solid rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);*/
+    
+    background: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+}
+
+
+/* Chat Header */
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-bottom: 2px solid rgb(212, 208, 209);
+    color: #faf8f8;
+    font-size: 22px;
+    font-weight: bold;
+    gap: 10px;
+    background-color: rgb(7, 7, 7);
+}
+
+/* AI Profile Picture */
+.dp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgb(212, 208, 209);
+}
+
+/* Chat Box */
+.chat-box {
+    height: 420px;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.chat-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* Chat Messages */
+.message {
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 10px;
+    max-width: 75%;
+    font-size: 16px;
+    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* AI Messages */
+.bot {
+    background: #90A4AE;
+    color: white;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* AI DP beside AI messages */
+.bot::before {
+    content: "";
+    background: url('image.jpeg') no-repeat center/cover;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* User Messages */
+.user {
+    background: #64B5F6;
+    color: white;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+/* AI Typing Animation */
+.typing {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #7c7c7c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 75%;
+    align-self: flex-start;
+    font-size: 16px;
+}
+
+.typing span {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0% { opacity: 0.2; transform: translateY(2px); }
+    50% { opacity: 1; transform: translateY(0px); }
+    100% { opacity: 0.2; transform: translateY(2px); }
+}
+
+/* Chat Input Box */
+.input-container {
+    display: flex;
+    padding: 12px;
+    border-top: 2px solid rgb(212, 208, 209);
+    background: rgb(7, 7, 7);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Input Field */
+#messageInput {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid rgb(212, 208, 209);
+    border-radius: 8px;
+    outline: none;
+    background-color:rgb(7, 7, 7);
+    color: white;
+    margin-right: 1.5%;
+}
+
+/* Send Button */
+#sendButton {
+    background: #90A4AE;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#sendButton:hover {
+    background: #64B5F6;
+}
